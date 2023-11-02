@@ -52,7 +52,7 @@ namespace Delegate00
         static void InvokeDelegateA(FirstDelegate myDelegate,int a,int b)
         {
             myDelegate(a, b);
-            /*  這樣寫也以
+            /* 這樣寫也以
                myDelegate.Invoke(a,b);
              */
         }
