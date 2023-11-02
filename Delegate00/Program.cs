@@ -6,19 +6,22 @@ namespace Delegate00
     internal class Program
     {
         /*
-         委派型別FirstDelegate宣告的物件，指向没有回傳的方法，
-         而這個方法具兩個參數，第一個參數為整數型態，第二個參數也是整數型態
+         委派型別FirstDelegate宣告的物件：
+         指向没有回傳值的方法，
+         方法具兩個參數，第一個參數為整數型態，第二個參數也是整數型態
          */
-        delegate void FirstDelegate(int i1, int i2);
+       internal delegate void FirstDelegate(int i1, int i2);
         /*
-        委派型別FirstDelegate宣告的物件，指向没有回傳的方法，
-        而這個方法具兩個參數，第一個參數為整數型態，第二個參數也是整數型態
+        委派型別FirstDelegate宣告的物件：
+        指向回傳floa資料的方法，
+        方法具兩個參數，二個參數都是float型態
         */
-        delegate float SecondDelegate(float p1, float p2);
+        internal delegate float SecondDelegate(float p1, float p2);
+        
         static void Main(string[] args)
         {
-            
             var f = new forDelegate();
+
             #region 宣告委派物件
             FirstDelegate delegate1 = f.VoidAdd;
             FirstDelegate delegate2 = f.VoidSub;
@@ -30,7 +33,6 @@ namespace Delegate00
             InvokeDelegateA(delegate1, 2, 3);
             InvokeDelegateA(delegate2, 4, 2);
             var feedBack = InvokeDelegateB(delegate3, 7.1f, 2.4f);
-            
             /* 
             這樣寫也是可以的
             InvokeDelegateA(f.VoidAdd, 2, 3);
@@ -43,9 +45,9 @@ namespace Delegate00
 
             Console.WriteLine("委派加減");
             var delegates = f.VoidAdd + delegate2;
-            delegates(100, 5);
-            delegates = delegates - delegate2;
-            delegates(100, 5);
+            delegates(100, 5);//先執行 f.VoidAdd , 再執行  delegate2
+            delegates = delegates - delegate2;  //將delegate2 移除
+            delegates(100, 5);  // 只有執行 f.VoidAdd
             Console.ReadKey();
         }
 
