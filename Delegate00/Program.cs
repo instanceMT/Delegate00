@@ -66,14 +66,32 @@ namespace Delegate00
     }
     public class forDelegate
     {
+        /// <summary>
+        /// 兩個整數相加並列出結果
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
         public void VoidAdd(int a, int b)
         {
             Console.WriteLine(a + "+" + b + "=" + (a + b));
         }
+
+        /// <summary>
+        /// 兩個整數相減並列出結果
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
         public void VoidSub(int p1, int p2)
         {
             Console.WriteLine(p1 + "-" + p2 + "=" + (p1 - p2));
         }
+        
+        /// <summary>
+        /// 兩個浮點數相加並回傳浮點數
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public float RtnIntAdd(float a, float b)
         {
             return a + b;
